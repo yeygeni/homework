@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+  <nav >
+            <ul>
+                <li><a href="http://localhost:3000/items" >Products</a></li>
+                <li><a href="http://localhost:3000/category" >Categories of Products</a></li>
+                <li><a href="http://localhost:3000/items/addItem" >Add product</a></li>
+                <li><a href="http://localhost:3000/category/addCategory">Add category</a></li>
+            </ul>
+  </nav>
+
+
+<form  method="POST" action="/items/addItem">
+     <input type="text" name="itemName"  required >
+    <% if(categorys.length != 0) { %>
+
+    	<select name="category" >
+            <% categorys.forEach(category =>{ %>
+           		 <option value=<%=category %>> <%= category %></option>
+            <% }); %>
+        
+        </select>
+    <%}%>
+     <input type="submit" ></td>
+</form>
+</body>
+</html>

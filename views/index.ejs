@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+  <nav >
+            <ul>
+                <li><a href="http://localhost:3000/items" >Products</a></li>
+                <li><a href="http://localhost:3000/category" >Categories of Products</a></li>
+                <li><a href="http://localhost:3000/items/addItem" >Add product</a></li>
+                <li><a href="http://localhost:3000/category/addCategory">Add category</a></li>
+            </ul>
+  </nav>
+
+
+ <table>
+		<tr>
+		    <th>Name</th><th>Category</th>
+		</tr>
+		<% items.forEach(item => { %>
+		    <tr>
+		      <td><%= item.name %>
+		      <td><%= item.category %></td>
+		      <td>
+			      <form  method="POST" action="/items/deleteItem">
+			        <button type="submit">Delete</button>
+			        <input type="hidden" name="id" value="<%- item.id %>" >
+			      </form>
+			  </td>
+			    <td>
+			      <form  method="POST" action="/items/changeItemById">
+			        <button type="submit">Change</button>
+			        <input type="hidden" name="oldName" value="<%- item.name %>" >
+			        <input type="hidden" name="oldCategory" value="<%- item.category %>" >			        
+			        <input type="hidden" name="id" value="<%- item.id %>" >
+			      </form>
+			  </td>
+    		</tr>  
+		<% }); %>	
+
+</table>
+</body>
+</html>
