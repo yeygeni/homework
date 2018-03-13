@@ -29,7 +29,8 @@ itemsRouter.route('/deleteItem')
 						res.render('index.ejs',items);				
 					} 
 				catch(e) {
-					console.log(e);
+					res.render('error.ejs');
+
 				}
 				});
 
@@ -41,8 +42,8 @@ itemsRouter.route('/addItem')
 					res.render('addItem.ejs',categorys);
 
 				} catch(e) {
-					// statements
-					console.log(e);
+				res.render('error.ejs');
+						
 				}
             	
             })
@@ -61,8 +62,8 @@ itemsRouter.route('/addItem')
 						res.render('index.ejs',items);				
 					} 
 				catch(e) {
-					// statements
-					console.log(e);
+					res.render('error.ejs');
+
 				}
 				
 						
@@ -75,8 +76,7 @@ itemsRouter.route('/changeItemById')
 					res.render('changeItem.ejs',{categorys,id,oldName,oldCategory});
 
 				} catch(e) {
-					// statements
-					console.log(e);
+					res.render('error.ejs');
 				}
 				
 			})	
@@ -94,7 +94,7 @@ itemsRouter.route('/changeItem')
 						res.render('index.ejs',items);				
 					} 
 				catch(e) {
-					console.log(e);
+					res.render('error.ejs');
 				}
 			});
 

@@ -35,7 +35,7 @@ categorysRouter.route('/deleteCategory')
 
 							res.render('addCategory.ejs',categorys)
 						} catch(e) {
-							console.log(e);
+							res.render('error.ejs');
 						}	
 					});
 categorysRouter.route('/changeCategoryName')
@@ -67,7 +67,8 @@ categorysRouter.route('/changeCategory')
 	
 						res.render('category.ejs',сategorys)
 					} catch(e) {
-						console.log(e);
+						res.render('error.ejs');
+
 					}
 				})
 
@@ -83,7 +84,7 @@ categorysRouter.route('/addCategory')
 				const categorys = await readFile(categoryDbFile);
 				res.render('addCategory.ejs',categorys);
 			} catch(e) {
-				console.log(e);
+				res.render('error.ejs');
 			}
 			
 		})
@@ -96,7 +97,7 @@ categorysRouter.route('/addCategory')
 				console.log(categorys);
 				res.render('category.ejs',categorys)
 			} catch(e) {
-				console.log(e);
+				res.render('error.ejs');
 			}
 			
 		});

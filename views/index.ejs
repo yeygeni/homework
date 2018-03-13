@@ -14,11 +14,15 @@
             </ul>
   </nav>
 
-
+<% if(items.length === 0){ %>
+			<p>No items</p>
+<%}else{ %>
  <table>
 		<tr>
 		    <th>Name</th><th>Category</th>
 		</tr>
+		
+		
 		<% items.forEach(item => { %>
 		    <tr>
 		      <td><%= item.name %>
@@ -41,5 +45,6 @@
 		<% }); %>	
 
 </table>
+<%}%>
 </body>
 </html>
